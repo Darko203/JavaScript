@@ -77,3 +77,38 @@ if (a * a + b * b == c * c) {
 } else {
   console.log("Triagolnikot ne e pravoagolen");
 }
+
+// Да се напише програма за пресметување на y = x n за даден природен броj n, n >= 1 и реален броj x
+let y = 1;
+let x = Number(prompt("Vnesi x"));
+let n = Number(prompt("Vnesi n"));
+let i = 1;
+while (i <= n) {
+  y *= x;
+  i++;
+}
+console.log(y);
+
+// •Да се напише програма за пресметување на сумата на сите парни двоцифрени броеви.Добиената сума се печати на екран
+let suma = 0;
+let i = 10;
+while (i <= 98) {
+  suma = suma + i;
+  i += 2;
+}
+console.log(suma);
+
+// Да се напише програма коjа од непознат броj на цели броеви кои се внесуваат од тастатура ´ке ги определи двата броjа со наjголеми вредности.Програмата завршува ако наместо броj се внесе знак што не е цифра
+
+var karakter = prompt("Vnesi broj");
+let niza = [];
+if (isNaN(karakter)) {
+  console.log("Vnesovte pogresen broj");
+} else {
+  while (!isNaN(karakter)) {
+    niza.push(karakter);
+    karakter = prompt("Vnesi broj");
+  }
+}
+niza.sort();
+console.log(niza[niza.length - 1] + " " + niza[niza.length - 2]);
