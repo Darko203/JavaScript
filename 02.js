@@ -45,27 +45,30 @@
 
 // // 4. Да се напише програма коjа од непознат броj на цели броеви кои се внесуваат од тастатура ´ке ги определи позициите(редните броеви на внесување) на двата последователни броеви кои jа имаат наjголемата сума.Програмата завршува ако едно по друго(последователно) се внесат два негативни цели броjа
 
-// let n = prompt("Vnesi broj");
-let j = [];
-let p = [];
+let br1 = prompt("1 broj");
+let br2 = prompt("2 broj");
+let maxsum = br1 + br2;
+let niza = [];
 
-for (let i = 1; i <= 2; i++) {
-  n = prompt("Vnesi broj");
-  j.push(n);
-
-  console.log(j);
+while (br1 > 0 || br2 > 0) {
+  niza.push(br1);
+  niza.push(br2);
+  br1 = prompt("1 broj");
+  br2 = prompt("2 broj");
 }
-for (let i = 1; i <= 2; i++) {
-  n = prompt("Vnesi broj");
-  p.push(n);
-  console.log(p);
-}
-let sumaJ = j[0] + j[1];
-let sumaP = p[0] + p[1];
-if (sumaJ < sumaP) {
-  console.log(p);
-} else {
-  console.log(j);
+console.log(niza);
+if (niza.length > 2) {
+  let idx1 = 0;
+  let idx2 = 1;
+  maxsum = niza[0] + niza[1];
+  for (let i = 2; i < niza.length - 1; i++) {
+    if (niza[i] + niza[i + 1] > maxsum) {
+      idx1 = i;
+      idx2 = i + 1;
+      maxsum = niza[i] + niza[i + 1];
+    }
+  }
+  console.log("indeksite se" + idx1 + " " + idx2 + "nivniot zbir e" + maxsum);
 }
 
 // // 5. Да се напише објект кој ќе содржи повеќе клуч - вредност парови, каде што вредностите ќе бидат од тип стринг, број, низа и објект.
